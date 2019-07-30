@@ -14,3 +14,24 @@ RUN \
  
 RUN ssh-agent bash -c 'ssh-add /home/vsts/work/_temp/azuredevops; git clone git@bitbucket.org:g-sureshsala/nginx.git'
 CMD ["ls"]
+
+
+
+FROM ubuntu
+MAINTAINER Luke Crooks "luke@pumalo.org"
+# Update aptitude with new repo
+RUN apt-get update
+# Install software 
+RUN apt-get install -y git
+# Make ssh dir
+RUN mkdir /root/.ssh/
+# Copy over private key, and set permissions
+# Warning! Anyone who gets their hands on this image will be able
+# to retrieve this private key file from the corresponding image layer
+ADD id_rsa /root/.ssh/id_rsa
+# Create known_hosts
+RUN touch /root/.ssh/known_hosts
+# Add bitbuckets key
+RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
+# Clone the conf files into the docker container
+RUN git clone git@bitbucket.org:User/repo.git
