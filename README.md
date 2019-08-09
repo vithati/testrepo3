@@ -3,7 +3,7 @@
 FROM ubuntu:latest
 # Install Nginx.asdfasfd
 RUN \
-  apt-get update && \
+  apt-get update && \asdf
   apt-get -y install software-properties-common && \
   add-apt-repository -y ppa:nginx/stable && \
   apt-get install -y git && \
