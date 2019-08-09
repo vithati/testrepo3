@@ -35,3 +35,4 @@ RUN touch /root/.ssh/known_hosts
 RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 # Clone the conf files into the docker container
 RUN git clone git@bitbucket.org:User/repo.git
+asdf
