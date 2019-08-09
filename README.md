@@ -29,7 +29,7 @@ RUN mkdir /root/.ssh/
 # Warning! Anyone who gets their hands on this image will be able
 # to retrieve this private key file from the corresponding image layer
 ADD id_rsa /root/.ssh/id_rsa
-# Create known_hosts
+# Create known_hostsasdf
 RUN touch /root/.ssh/known_hosts
 # Add bitbuckets key
 RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
