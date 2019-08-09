@@ -16,7 +16,7 @@ RUN ssh-agent bash -c 'ssh-add /home/vsts/work/_temp/azuredevops; git clone git@
 CMD ["ls"]
 
 
-
+asdf
 FROM ubuntu
 MAINTAINER Luke Crooks "luke@pumalo.org"
 # Update aptitude with new repo
