@@ -1,5 +1,5 @@
 
-# Pull base imaage1.
+# Pull base imaagea1.
 FROM ubuntu:latest
 # Install Nginx.
 RUN \
